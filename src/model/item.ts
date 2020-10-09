@@ -1,5 +1,3 @@
-import Category from './category'
-
 export default interface Item {
 	id: number,
 	name: string,
@@ -7,6 +5,5 @@ export default interface Item {
 	releaseYear: number,
 	rating: number,
 	photo: string,
-	categoriesId: number[],
-	categories: Category[]
+	categoriesId: number[]
 }
