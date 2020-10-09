@@ -6,7 +6,11 @@ export default class CategoryDataset {
 	private categories: Category[]
 
 	private constructor() {
-		this.categories = new Array<Category>()
+		this.categories = Array<Category>()
+	}
+
+	static getInstance(): CategoryDataset {
+		return this.instance
 	}
 
 	insertNewCategory(name: string): void {
@@ -29,7 +33,7 @@ export default class CategoryDataset {
 		if (filteredResult)
 			return filteredResult
 		else
-			throw new Error(`Not founded item with id: ${id}`)
+			throw new Error(`Not founded category with id: ${id}`)
 	}
 
 	updateCategory(id: number, name: string): void {
@@ -44,6 +48,6 @@ export default class CategoryDataset {
 	}
 
 	deleteAll(): void {
-		this.categories = new Array<Category>()
+		this.categories = Array<Category>()
 	}
 }
